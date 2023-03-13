@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "web_modul_5"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Zubov <https://github.com/DanielDDZ>"]
+readme = "README.md"
+packages = [{include = "web_modul_5"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.8.3"
+websockets = "^10.4"
+names = "^0.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

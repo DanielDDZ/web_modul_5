@@ -46,7 +46,6 @@ class Server:
             else:
                 await self.send_to_clients(f"{ws.name}: {message}")
 
-
     async def get_exchange(self):
         async with aiohttp.ClientSession() as session:
             async with session.get('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5') as resp:
@@ -54,7 +53,6 @@ class Server:
                     r = await resp.json()
                     exc, = list(filter(lambda el: el['ccy'] == 'USD', r))
                 return f"USD: buy: {exc['buy']}, sale: {exc['sale']}"
-
 
     async def save_to_file(self, message):
         path = AsyncPath('exchange.txt')
